@@ -1,0 +1,27 @@
+<h1>Products</h1>
+<p *ngIf="!(products$ | async)"><em></em></p>
+<p>
+  <a [routerLink]="['/addproduct']" class="btn btn-primary float-right mb-2">Create New Product</a>
+</p>
+<table class="table table-sm table-hover" >
+  <thead>
+    <tr>
+      <th>Product Id</th>
+      <th>Product Name</th>
+      <th>Price</th>
+      <th>Category Id</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of (products$ | async)">
+      <td>{{ p.productId }}</td>
+      <td><a [routerLink]="['/product/', p.productId]">{{ p.productName }}</a></td>
+      <td>{{ p.price}}</td>
+      <td>{{ p.categoryId }}</td>
+      <td><a [routerLink]="['/product/edit/', p.productId]" class="btn btn-primary btn-sm float-right">Edit</a></td>
+      <td><a [routerLink]="" (click)="delete(p.productId)" class="btn btn-danger btn-sm float-right">Delete</a></td>
+    </tr>
+  </tbody>
+</table>

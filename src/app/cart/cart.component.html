@@ -1,0 +1,19 @@
+<h1>Cart</h1>
+<p *ngIf="!(cartitems$ | async)"><em></em></p>
+<table class="table table-sm table-hover" >
+  <thead>
+    <tr>
+      <th>Product Id</th>
+      <th> Sub Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let i of (cartitems$ | async)">
+      <td>{{ i.productId }}</td>
+      <td>{{ i.price * i.quantity }}</td>
+    </tr>
+  </tbody>
+  <div>
+    <p> <b> Grand Total : </b> {{ my_data.grandTotal }} </p>
+  </div>
+</table>

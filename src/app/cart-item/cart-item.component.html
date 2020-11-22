@@ -1,0 +1,5 @@
+<ng-container *ngIf="(cartItem$ | async) as cartitem">
+
+    <h3> Product Id : {{cartitem.productId}} <br> Price : {{cartitem.price}} <br> Quantity : {{cartitem.quantity}} <br> <!--Sub Total : {{cartitem.subTotal}}--></h3>
+     
+</ng-container>

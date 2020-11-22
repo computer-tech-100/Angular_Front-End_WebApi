@@ -1,0 +1,16 @@
+<h1>{{actionType}} category </h1>
+<form [formGroup]="form" (ngSubmit)="addData()" #formDir="ngForm" novalidate>
+  <div class="form-group row">
+      <!-- field for Category Name -->
+    <label class=" control-label col-md-12">Category Name</label>
+    <div class="col-md-12">
+      <input class="form-control" type="text" formControlName="name">
+    </div>
+    <span class="text-danger ml-3" >
+      Category name is required.
+    </span>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-success float-right">Save</button>
+  </div>
+</form>

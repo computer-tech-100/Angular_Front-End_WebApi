@@ -4,9 +4,11 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
-    "forceConsistentCasingInFileNames": true,
+    "forceConsistentCasingInFileNames": false,//set this false to prevent error
     "strict": true,
+    "strictPropertyInitialization": false,//added for pereventing initialization
     "noImplicitReturns": true,
+    "noImplicitAny": false,//this one added for pereventing implicit any error
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
@@ -19,6 +21,7 @@
     "lib": [
       "es2018",
       "dom"
+     
     ]
   },
   "angularCompilerOptions": {

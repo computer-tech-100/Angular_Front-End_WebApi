@@ -1,0 +1,5 @@
+<ng-container *ngIf="(product$ | async) as product">
+
+  <h3> Product Id : {{product.productId}} <br> Product Name : {{product.productName}} <br> Price : {{product.price}} <br> Category Id : {{product.categoryId}}</h3>
+   
+</ng-container>
